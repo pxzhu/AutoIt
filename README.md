@@ -1,5 +1,7 @@
 #### Let's create an automated system with Autoit.
 
+#### If installing the program after formatting is troublesome, take 'Auto_Installer.exe' down.
+
 - 2020-07-16
 
 >Design GUI    
