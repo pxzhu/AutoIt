@@ -1,5 +1,6 @@
 ;~ Made by pxzhu
 ;~ 2020-07-16 Start
+;~ 2020-07-17 ~ing
 
 #include <ButtonConstants.au3>
 #include <GUIConstantsEx.au3>
@@ -59,6 +60,9 @@ Global $About = GUICtrlCreateButton("About", 180, 420, 230, 50, $WS_GROUP)
 GUICtrlSetFont(-1, 10, 400, 0, "MS Sans Serif")
 $Copyright = GUICtrlCreateLabel("Copyright 2020. pxzhu. All right reserved.", 195, 490, 196, 17)
 GUICtrlSetFont(-1, 7, 400, 0, "MS Sans Serif")
+GUICtrlSetState($VisualStudio2019Community, $GUI_DISABLE)
+GUICtrlSetState($VMwarePlayer, $GUI_DISABLE)
+GUICtrlSetState($Eclipse, $GUI_DISABLE)
 GUISetState(@SW_SHOW)
 #EndRegion ### END Koda GUI section ###
 Global $x = 0, $y = 0
@@ -67,20 +71,48 @@ While 1
 $nMsg = GUIGetMsg()
 Switch $nMsg
    Case $GUI_EVENT_CLOSE ;~ FileDelete All
-;	  FileDelete(@ScriptDir & "\ChromeSetup.exe")
-;	  FileDelete(@ScriptDir & "\WhaleSetup.exe")
-;	  FileDelete(@ScriptDir & "\Firefox Installer.exe")
-;	  FileDelete(@ScriptDir & "\BANDICAMERA-SETUP-KR.EXE")
-;	  FileDelete(@ScriptDir & "\BandiCamera_Close.bmp")
+	  FileDelete(@ScriptDir & "\ChromeSetup.exe")
+	  FileDelete(@ScriptDir & "\WhaleSetup.exe")
+	  FileDelete(@ScriptDir & "\Firefox Installer.exe")
+	  FileDelete(@ScriptDir & "\BANDICAMERA-SETUP-KR.EXE")
+	  FileDelete(@ScriptDir & "\BandiCamera_Close.bmp")
+	  FileDelete(@ScriptDir & "\OBSStudio.exe")
+	  FileDelete(@ScriptDir & "\Bandizip.exe")
+	  FileDelete(@ScriptDir & "\Bandizip_Close.bmp")
+	  FileDelete(@ScriptDir & "\HoneyView.exe")
+	  FileDelete(@ScriptDir & "\PotPlayer.exe")
+	  FileDelete(@ScriptDir & "\KakaoTalk_Setup.exe")
+	  FileDelete(@ScriptDir & "\Discord.exe")
+	  FileDelete(@ScriptDir & "\TeamViewer.exe")
+	  FileDelete(@ScriptDir & "\ClassicShellSetup_4_3_1.exe")
+	  FileDelete(@ScriptDir & "\Everything.exe")
+	  FileDelete(@ScriptDir & "\Git.exe")
+	  FileDelete(@ScriptDir & "\Notepad.exe")
+	  FileDelete(@ScriptDir & "\VisualStudioCode.exe")
+	  FileDelete(@ScriptDir & "\Bitdefender.exe")
 ;	  FileDelete(@ScriptDir & "\ImageSearchDLLx32.dll")
 ;	  FileDelete(@ScriptDir & "\ImageSearchDLLx64.dll")
 ;	  FileDelete(@ScriptDir & "\msvcr110.dll")
 ;	  FileDelete(@ScriptDir & "\msvcr110d.dll")
-;	  If FileExists("msvcr110d.dll") Then FileDelete(@ScriptDir & "\ChromeSetup.exe")
-;	  If FileExists("msvcr110d.dll") Then FileDelete(@ScriptDir & "\WhaleSetup.exe")
-;	  If FileExists("msvcr110d.dll") Then FileDelete(@ScriptDir & "\Firefox Installer.exe")
-;	  If FileExists("BANDICAMERA-SETUP-KR.EXE") Then FileDelete(@ScriptDir & "\BANDICAMERA-SETUP-KR.EXE")
-;	  If FileExists("BandiCamera_Close.bmp") Then FileDelete(@ScriptDir & "\BandiCamera_Close.bmp")
+	  If FileExists("ChromeSetup.exe") Then FileDelete(@ScriptDir & "\ChromeSetup.exe")
+	  If FileExists("msvcr110d.dll") Then FileDelete(@ScriptDir & "\WhaleSetup.exe")
+	  If FileExists("Firefox Installer.exe") Then FileDelete(@ScriptDir & "\Firefox Installer.exe")
+	  If FileExists("BANDICAMERA-SETUP-KR.EXE") Then FileDelete(@ScriptDir & "\BANDICAMERA-SETUP-KR.EXE")
+	  If FileExists("BandiCamera_Close.bmp") Then FileDelete(@ScriptDir & "\BandiCamera_Close.bmp")
+	  If FileExists("OBSStudio.exe") Then FileDelete(@ScriptDir & "\OBSStudio.exe")
+	  If FileExists("Bandizip.exe") Then FileDelete(@ScriptDir & "\Bandizip.exe")
+	  If FileExists("Bandizip_Close.bmp") Then FileDelete(@ScriptDir & "\Bandizip_Close.bmp")
+	  If FileExists("HoneyView.exe") Then FileDelete(@ScriptDir & "\HoneyView.exe")
+	  If FileExists("PotPlayer.exe") Then FileDelete(@ScriptDir & "\PotPlayer.exe")
+	  If FileExists("KakaoTalk_Setup.exe") Then FileDelete(@ScriptDir & "\KakaoTalk_Setup.exe")
+	  If FileExists("Discord.exe") Then FileDelete(@ScriptDir & "\Discord.exe")
+	  If FileExists("TeamViewer.exe") Then FileDelete(@ScriptDir & "\TeamViewer.exe")
+	  If FileExists("ClassicShellSetup_4_3_1.exe") Then FileDelete(@ScriptDir & "\ClassicShellSetup_4_3_1.exe")
+	  If FileExists("Everything.exe") Then FileDelete(@ScriptDir & "\Everything.exe")
+	  If FileExists("Git.exe") Then FileDelete(@ScriptDir & "\Git.exe")
+	  If FileExists("Notepad.exe") Then FileDelete(@ScriptDir & "\Notepad.exe")
+	  If FileExists("VisualStudioCode.exe") Then FileDelete(@ScriptDir & "\VisualStudioCode.exe")
+	  If FileExists("Bitdefender.exe") Then FileDelete(@ScriptDir & "\Bitdefender.exe")
 ;	  If FileExists("ImageSearchDLLx32.dll") Then FileDelete(@ScriptDir & "\ImageSearchDLLx32.dll")
 ;	  If FileExists("ImageSearchDLLx64.dll") Then FileDelete(@ScriptDir & "\ImageSearchDLLx64.dll")
 ;	  If FileExists("msvcr110.dll") Then FileDelete(@ScriptDir & "\msvcr110.dll")
@@ -91,9 +123,9 @@ Switch $nMsg
 	  GUICtrlSetState($Whale, $GUI_CHECKED)
 	  GUICtrlSetState($Firefox, $GUI_CHECKED)
 	  GUICtrlSetState($Notepad, $GUI_CHECKED)
-	  GUICtrlSetState($VisualStudio2019Community, $GUI_CHECKED)
+;	  GUICtrlSetState($VisualStudio2019Community, $GUI_CHECKED)
 	  GUICtrlSetState($VisualStudioCode, $GUI_CHECKED)
-	  GUICtrlSetState($Eclipse, $GUI_CHECKED)
+;	  GUICtrlSetState($Eclipse, $GUI_CHECKED)
 	  GUICtrlSetState($BandiCamera, $GUI_CHECKED)
 	  GUICtrlSetState($OBSStudio, $GUI_CHECKED)
 	  GUICtrlSetState($Bitdefender, $GUI_CHECKED)
@@ -106,15 +138,15 @@ Switch $nMsg
 	  GUICtrlSetState($ClassicShell, $GUI_CHECKED)
 	  GUICtrlSetState($Everything, $GUI_CHECKED)
 	  GUICtrlSetState($Git, $GUI_CHECKED)
-	  GUICtrlSetState($VMwarePlayer, $GUI_CHECKED)
+;	  GUICtrlSetState($VMwarePlayer, $GUI_CHECKED)
    Case $SelectDefault
 	  GUICtrlSetState($Chrome, $GUI_UNCHECKED)
 	  GUICtrlSetState($Whale, $GUI_UNCHECKED)
 	  GUICtrlSetState($Firefox, $GUI_UNCHECKED)
 	  GUICtrlSetState($Notepad, $GUI_UNCHECKED)
-	  GUICtrlSetState($VisualStudio2019Community, $GUI_UNCHECKED)
+;	  GUICtrlSetState($VisualStudio2019Community, $GUI_UNCHECKED)
 	  GUICtrlSetState($VisualStudioCode, $GUI_UNCHECKED)
-	  GUICtrlSetState($Eclipse, $GUI_UNCHECKED)
+;	  GUICtrlSetState($Eclipse, $GUI_UNCHECKED)
 	  GUICtrlSetState($BandiCamera, $GUI_UNCHECKED)
 	  GUICtrlSetState($OBSStudio, $GUI_UNCHECKED)
 	  GUICtrlSetState($Bitdefender, $GUI_UNCHECKED)
@@ -127,7 +159,7 @@ Switch $nMsg
 	  GUICtrlSetState($ClassicShell, $GUI_UNCHECKED)
 	  GUICtrlSetState($Everything, $GUI_UNCHECKED)
 	  GUICtrlSetState($Git, $GUI_UNCHECKED)
-	  GUICtrlSetState($VMwarePlayer, $GUI_UNCHECKED)
+;	  GUICtrlSetState($VMwarePlayer, $GUI_UNCHECKED)
    Case $HowToUse
 	  MsgBox(0, "How To Use", "Check the program you want and click the 'Installbutton'")
    Case $InstallButton
@@ -142,7 +174,6 @@ Switch $nMsg
 	  If GUICtrlRead($Eclipse) = 1 Then Eclipse()
 	  If GUICtrlRead($BandiCamera) = 1 Then BandiCamera()
 	  If GUICtrlRead($OBSStudio) = 1 Then OBSStudio()
-	  If GUICtrlRead($Bitdefender) = 1 Then Bitdefender()
 	  If GUICtrlRead($Bandizip) = 1 Then Bandizip()
 	  If GUICtrlRead($HoneyView) = 1 Then HoneyView()
 	  If GUICtrlRead($PotPlayer) = 1 Then PotPlayer()
@@ -153,6 +184,7 @@ Switch $nMsg
 	  If GUICtrlRead($Everything) = 1 Then Everything()
 	  If GUICtrlRead($Git) = 1 Then Git()
 	  If GUICtrlRead($VMwarePlayer) = 1 Then VMwarePlayer()
+	  If GUICtrlRead($Bitdefender) = 1 Then Bitdefender()
 	  WinSetState($wait, "", @SW_SHOW)
    Case $About
 	  ShellExecute("Http://www.github.com/pxzhu/AutoIt")
@@ -245,17 +277,138 @@ Func Firefox() ;~ Firefox
    Sleep(500)
    FileDelete(@ScriptDir & "\Firefox Installer.exe") ;~ Download File Delete
 EndFunc
-Func Notepad() ;~
-   MsgBox(1,"1","4")
+Func Notepad() ;~ Notepad
+   ;~ Download File URL
+   Local $dFileURL = "https://github.com/notepad-plus-plus/notepad-plus-plus/releases/download/v7.8.9/npp.7.8.9.Installer.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("Notepad Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "Notepad.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'Notepad.exe'
+   Run("Notepad.exe")
+   WinWaitActive("Installer Language", "한국어")
+   Send("{Enter}")
+   WinWaitActive("Notepad++ v7.8.9 설치", "Notepad++ v7.8.9 설치를 시작합니다.")
+   Send("{Enter}")
+   WinWaitActive("Notepad++ v7.8.9 설치", "사용권 계약")
+   Send("{Enter}")
+   WinWaitActive("Notepad++ v7.8.9 설치", "설치 위치 선택")
+   Send("{Enter}")
+   WinWaitActive("Notepad++ v7.8.9 설치", "구성 요소 선택")
+   Send("{Enter}")
+   WinWaitActive("Notepad++ v7.8.9 설치", "Create Shortcut on Desktop")
+   Send("{Enter}")
+   WinWaitActive("Notepad++ v7.8.9 설치", "Notepad++ v7.8.9 설치 완료")
+   Send("{Tab 2}{Space}{Tab}{Space}")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\Notepad.exe") ;~ Download File Delete
 EndFunc
-Func VisualStudio2019Community() ;~
+Func VisualStudio2019Community() ;~ 미완성
    MsgBox(1,"1","5")
 EndFunc
-Func VisualStudioCode() ;~
-   MsgBox(1,"1","6")
+Func VisualStudioCode() ;~ VisualStudioCode
+   ;~ Download File URL
+   Local $dFileURL = "https://go.microsoft.com/fwlink/?Linkid=852157"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("VisualStudioCode Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "VisualStudioCode.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(20000)
+
+   ;~ Install 'VisualStudioCode.exe'
+   Run("VisualStudioCode.exe")
+   WinWaitActive("설치 - Microsoft Visual Studio Code", "사용권 계약")
+   Send("!A")
+   Send("!N")
+   WinWaitActive("설치 - Microsoft Visual Studio Code", "대상 위치 선택")
+   Send("!N")
+   WinWaitActive("설치 - Microsoft Visual Studio Code", "시작 메뉴 폴더 선택")
+   Send("!N")
+   WinWaitActive("설치 - Microsoft Visual Studio Code", "추가 작업 선택")
+   Send("!D")
+   Send("!N")
+   WinWaitActive("설치 - Microsoft Visual Studio Code", "설치 준비됨")
+   Send("!I")
+   WinWaitActive("설치 - Microsoft Visual Studio Code", "Visual Studio Code 설정 마법사를 완료하는 중")
+   Send("{Space}")
+   Send("!F")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\VisualStudioCode.exe") ;~ Download File Delete
 EndFunc
-Func Eclipse() ;~
-   MsgBox(1,"1","7")
+Func Eclipse() ;~ 미완성
+   ;~ Download File URL
+   Local $dFileURL = "http://download1475.mediafire.com/e1iy0ygqgj8g/8rg2p846h9l71s2/jdk-14.0.1_windows-x64_bin.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("jdk-14.0.1 Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "jdk-14.0.1_windows-x64_bin.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+
+   Local $dFileURL = "https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2020-06/R/eclipse-inst-win64.exe&mirror_id=1142"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("Eclipse Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "eclipse-inst-win64.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+
+   Sleep(3000)
+
+
+
+;   http://download1643.mediafire.com/5jv92rv4cypg/j3qd6zfvlbmt8od/javaEnvironmentalVariables.bat
+
+;   http://download1478.mediafire.com/8fho4rtjwllg/49y00fsr0sej4c2/Accept.bmp
+;   http://download1351.mediafire.com/vuir7t2gjxdg/sra5a9tvbtw6z7q/Developer.bmp
+;   http://download1582.mediafire.com/0feaqek7xrjg/5i5v9a6kn76b24n/Install.bmp
+;   http://download1979.mediafire.com/9imqzdreqtmg/fqx4ryb526ernu4/Launch.bmp
 EndFunc
 Func BandiCamera() ;~ BandiCamera
    ;~ Download File URL
@@ -311,39 +464,442 @@ Func BandiCamera() ;~ BandiCamera
    FileDelete(@ScriptDir & "\BANDICAMERA-SETUP-KR.EXE") ;~ Download File Delete
    FileDelete(@ScriptDir & "\BandiCamera_Close.bmp")
 EndFunc
-Func OBSStudio() ;~
-   MsgBox(1,"1","9")
+Func OBSStudio() ;~ OBSStudio
+   ;~ Download File URL
+   Local $dFileURL = "https://cdn-fastly.obsproject.com/downloads/OBS-Studio-25.0.8-Full-Installer-x64.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("OBSStudio Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "OBSStudio.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'OBSStudio.exe'
+   Run("OBSStudio.exe")
+   WinWaitActive("OBS Studio 25.0.8 Setup", "Welcome to OBS Studio 25.0.8 Setup")
+   Send("{Enter}")
+   WinWaitActive("OBS Studio 25.0.8 Setup", "License Agreement")
+   Send("{Enter}")
+   WinWaitActive("OBS Studio 25.0.8 Setup", "Choose Install Location")
+   Send("{Enter}")
+   WinWaitActive("OBS Studio 25.0.8 Setup", "Click Finish to close Setup.")
+   Send("{Tab 2}{Space}{Tab}{Enter}")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\OBSStudio.exe") ;~ Download File Delete
 EndFunc
-Func Bitdefender() ;~
-   MsgBox(1,"1","10")
+Func Bandizip() ;~ Bandizip
+   Local $dFileURL = "https://kr.bandisoft.com/bandizip/dl.php?online"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("Bandizip Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "Bandizip.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+
+   Local $dFileURL = "http://download1474.mediafire.com/lv4uzkgb8pug/ugiki3j766d565g/Bandizip_close.bmp"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("Bandizip_Close Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "Bandizip_Close.bmp", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   Local $ZipClose
+   ;~ Install 'Bandizip.exe'
+   Run("Bandizip.exe")
+   WinWaitActive("반디집 7.09 설치", "반디집 최종 사용자 이용 약관")
+   Send("{Enter}")
+   While $ZipClose <> 1
+	  $ZipClose = _ImageSearch("Bandizip_Close.bmp", 1, $x, $y, 0, 0)
+   WEnd
+   MouseMove($x, $y)
+   MouseClick("Left", $x, $y)
+   WinWaitActive("반디집 7.09 (스탠더드)", "XWeb32Man")
+   ProcessClose("Bandizip.exe")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\Bandizip.exe") ;~ Download File Delete
+   FileDelete(@ScriptDir & "\Bandizip_Close.bmp")
 EndFunc
-Func Bandizip() ;~
-   MsgBox(1,"1","11")
+Func HoneyView() ;~ HoneyView
+   ;~ Download File URL
+   Local $dFileURL = "https://kr.bandisoft.com/honeyview/dl.php?web-kr"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("HoneyView Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "HoneyView.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'Firefox Installer.exe'
+   Run("HoneyView.exe")
+   WinWaitActive("꿀뷰 설치", "꿀뷰 설치 약관")
+   Send("{Tab 6}{Space}{Tab 2}{Space}")
+   WinWaitActive("꿀뷰 5.33", "")
+   ProcessClose("Honeyview.exe")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\HoneyView.exe") ;~ Download File Delete
 EndFunc
-Func HoneyView() ;~
-   MsgBox(1,"1","12")
+Func PotPlayer() ;~ PotPlayer
+   ;~ Download File URL
+   Local $dFileURL = "https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("PotPlayer Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "PotPlayer.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'PotPlayer Installer.exe'
+   Run("PotPlayer.exe")
+   WinWaitActive("Installer Language", "한국어")
+   Send("{Enter}")
+   WinWaitActive("팟플레이어-64비트 설치", "설치를 시작하기 전")
+   Send("{Enter}")
+   WinWaitActive("팟플레이어-64비트 설치", "사용권 계약")
+   Send("{Enter}")
+   WinWaitActive("팟플레이어-64비트 설치", "설치하려는 구성 요소 선택:")
+   Send("{Down 9}{Space}{Down}{Space}{Down}{Space}{Tab 2}{Space}")
+   WinWaitActive("팟플레이어-64비트 설치", "설치할 폴더를 선택해")
+   Send("{Enter}")
+   WinWaitActive("팟플레이어-64비트 설치", "설치 완료")
+   Send("!{R}{Tab}{Space}")
+   WinWaitActive("Open Codec for PotPlayer 설치 ", "사용권 계약")
+   Send("{Enter}")
+   WinWaitActive("Open Codec for PotPlayer 설치 ", "구성 요소 선택")
+   Send("{Enter}")
+   WinWaitActive("Open Codec for PotPlayer 설치 ", "설치 위치 선택")
+   Send("{Enter}")
+   WinWaitActive("Open Codec for PotPlayer 설치 ", "설치 완료")
+   Send("{Enter}")
+
+   Sleep(500)
+   FileDelete(@ScriptDir & "\PotPlayer.exe") ;~ Download File Delete
 EndFunc
-Func PotPlayer() ;~
-   MsgBox(1,"1","13")
+Func KakaoTalk() ;~ KakaoTalk
+   ;~ Download File URL
+   Local $dFileURL = "http://app.pc.kakao.com/talk/win32/KakaoTalk_Setup.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("KakaoTalk Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "KakaoTalk_Setup.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'KakaoTalk.exe'
+   Run("KakaoTalk_Setup.exe")
+   WinWaitActive("Installer Language", "한국어")
+   Send("{Enter}")
+   WinWaitActive("카카오톡 설치", "컴퓨터에 카카오톡을 설치합니다.")
+   Send("{Enter}")
+   WinWaitActive("카카오톡 설치", "카카오톡을 설치할 폴더를 선택해 주세요.")
+   Send("{Enter}")
+   WinWaitActive("카카오톡 설치", "설치하려는 구성 요소 선택:")
+   Send("{Down}{Space}{Down}{Space}{Down}{Space}{Tab 2}{Space}")
+   WinWaitActive("카카오톡 설치", "카카오톡 설치 완료")
+   Send("{Tab 2}{Space}{Tab}{Space}")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\KakaoTalk_Setup.exe") ;~ Download File Delete
 EndFunc
-Func KakaoTalk() ;~
-   MsgBox(1,"1","14")
+Func Discord() ;~ Discord
+   ;~ Download File URL
+   Local $dFileURL = "https://discord.com/api/download?platform=win"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("Discord Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "Discord.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'Discord.exe'
+   Run("Discord.exe")
+   WinWaitActive("Discord", "Chrome Legacy Window")
+   ProcessClose("Discord.exe")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\Discord.exe") ;~ Download File Delete
 EndFunc
-Func Discord() ;~
-   MsgBox(1,"1","15")
+Func TeamViewer() ;~ TeamViewer
+   ;~ Download File URL
+   Local $dFileURL = "https://download.teamviewer.com/download/TeamViewer_Setup.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("TeamViewer Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "TeamViewer.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'TeamViewer.exe'
+   Run("TeamViewer.exe")
+   WinWaitActive("TeamViewer 설치", "TeamViewer를 선택해 주셔서 감사합니다.")
+   Send("{Tab 4}{Space}{Tab}{Enter}")
+   WinWaitActive("TeamViewer", "연결")
+   ProcessClose("TeamViewer.exe")
+   WinWait("TeamViewer 사용 방법:", "", 10)
+   Send("!{F4}")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\TeamViewer.exe") ;~ Download File Delete
 EndFunc
-Func TeamViewer() ;~
-   MsgBox(1,"1","16")
+Func ClassicShell() ;~ ClassicShell
+   ;~ Download File URL
+   Local $dFileURL = "http://download1460.mediafire.com/izb53yri9w4g/06fgmh9arq7cvcb/ClassicShellSetup_4_3_1.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("ClassicShell Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "ClassicShellSetup_4_3_1.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'ClassicShell.exe'
+   Run("ClassicShellSetup_4_3_1.exe")
+   WinWaitActive("Classic Shell Setup", "The Setup Wizard will install")
+   Send("{Enter}")
+   WinWaitActive("Classic Shell Setup", "I &accept the terms in the License Agreement")
+   Send("{Space}{Tab 2}{Enter}")
+   WinWaitActive("Classic Shell Setup", "Tree of selections")
+   Send("{Tab 5}{Space}{Tab 4}{Enter}")
+   WinWaitActive("Classic Shell Setup", "Ready to install Classic Shell")
+   Send("{Enter}")
+   WinWaitActive("Classic Shell Setup", "Click the Finish button")
+   Send("{Tab 4}{Space}{Tab}{Enter}")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\ClassicShellSetup_4_3_1.exe") ;~ Download File Delete
 EndFunc
-Func ClassicShell() ;~
-   MsgBox(1,"1","17")
+Func Everything() ;~ Everything
+   ;~ Download File URL
+   Local $dFileURL = "https://www.voidtools.com/Everything-1.4.1.969.x64-Setup.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("Everything Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "Everything.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'Everything.exe'
+   Run("Everything.exe")
+   WinWaitActive("Everything 설치", "한국어")
+   Send("{Enter}")
+   WinWaitActive("Everything 설치", "동의함")
+   Send("{Enter}")
+   WinWaitActive("Everything 설치", "설치 위치 선택")
+   Send("{Enter}")
+   WinWaitActive("Everything 설치", "설치 옵션 선택")
+   Send("{Enter}")
+   WinWaitActive("Everything 설치", "시작 시 업데이트 확인")
+   Send("{Tab}{Space}{Tab 3}{Space}{Tab 6}{Space}")
+   WinWaitActive("Everything 설치", "Everything 설치 완료")
+   Send("{Tab 2}{Space}{Tab}{Space}")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\Everything.exe") ;~ Download File Delete
 EndFunc
-Func Everything() ;~
-   MsgBox(1,"1","18")
+Func Git() ;~ Git
+   ;~ Download File URL
+   Local $dFileURL = "https://github.com/git-for-windows/git/releases/download/v2.27.0.windows.1/Git-2.27.0-64-bit.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("Git Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "Git.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(20000)
+
+   ;~ Install 'Git.exe'
+   Run("Git.exe")
+   WinWaitActive("Git 2.27.0 Setup", "Please read the following important")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Select Destination Location")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Select Components")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Select Start Menu Folder")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Choosing the default editor used by Git")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Adjusting your PATH environment")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Choosing HTTPS transport backend")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Configuring the line ending conversions")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Configuring the terminal")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Choose the default")
+   Send("{Enter}")
+   WinWaitActive("Git 2.27.0 Setup", "Configuring extra options")
+   Send("{Tab}{Space}{Tab 3}{Space}")
+   WinWaitActive("Git 2.27.0 Setup", "Configuring experimental options")
+   Send("{Space}{Tab 2}{Space}")
+   WinWaitActive("Git 2.27.0 Setup", "Completing the Git Setup Wizard")
+   Send("{Tab}{Space}{Tab}{Enter}")
+   Sleep(500)
+   FileDelete(@ScriptDir & "\Git.exe") ;~ Download File Delete
 EndFunc
-Func Git() ;~
-   MsgBox(1,"1","19")
+Func VMwarePlayer() ;~ 미완성
+   ;~ Download File URL
+   Local $dFileURL = "http://download1591.mediafire.com/fonvd07i5pug/11qyd1uifp02tdk/VMwarePlayer.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("VMwarePlayer Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "VMwarePlayer.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(20000)
+
+   ;~ Install 'VMwarePlayer.exe'
+   Run("VMwarePlayer.exe")
+   WinWaitActive("", "")
+   Send("{Enter}")
+   WinWaitActive("", "")
+   Send("{Enter}")
 EndFunc
-Func VMwarePlayer() ;~
-   MsgBox(1,"1","20")
+Func Bitdefender() ;~ Bitdefender
+   ;~ Download File URL
+   Local $dFileURL = "https://download.bitdefender.com/windows/installer/en-us/bitdefender_tsecurity.exe"
+   Local $filesize = InetGetSize( $dFileURL ) ;~ File Size Check
+
+   ProgressOn("Bitdefender Download", "Downloading...", "0% Downloading...")
+
+   Local $hDownload = InetGet($dFileURL, "Bitdefender.exe", 1, 1) ;~ File Download
+
+   While @InetGetActive ;~ File 0 ~ 100% Download Progress
+	  Local $downsize = @InetGetBytesRead
+	  Local $percent = ($downsize / $filesize) * 100
+	  $percent = Int($percent)
+	  ProgressSet($percent, $percent & "% Downloading...")
+	  Sleep(500)
+   WEnd
+   ProgressSet(100 , "Download Complete", "Complete")
+   Sleep(3000)
+   ProgressOff()
+   Sleep(3000)
+
+   ;~ Install 'Bitdefender.exe'
+   Run("Bitdefender.exe")
 EndFunc
